@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery使用笔记 | Unlimited</title>
+  <meta name="author" content="胡勇刚">
+  
+  <meta name="description" content="jQuery 是世界上使用的最多的一个javascript库之一，它最初提出来的目的是为了解决不同浏览器之间的兼容性问题。而现在，jQuery强大的dom，css操作能力，已经在很大程度上代替了原本的dom操作。
+jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你使用了">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="jQuery使用笔记"/>
+  <meta property="og:site_name" content="Unlimited"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Unlimited" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-45048806-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Unlimited</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-10-21T15:55:34.000Z"><a href="/2013/10/21/jquery使用笔记/">10月 21 2013</a></time>
+      
+      
+  
+    <h1 class="title">jQuery使用笔记</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>jQuery 是世界上使用的最多的一个javascript库之一，它最初提出来的目的是为了解决不同浏览器之间的兼容性问题。而现在，jQuery强大的dom，css操作能力，已经在很大程度上代替了原本的dom操作。</p>
+<p>jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你使用了prototype等库的时候，为了避免命名冲突，可以使用jQuery来运行。甚至可以使用jQuery.conflict()方法给jQuery再取一个别名。</p>
+<h3>jQuery选择器</h3>
+<p>jQuery可以使用css selector的方式取得dom控件，并将其扩展为jQuery对象。 css-selector有一下几种形式：<br><code>&quot;A&quot;</code>   A是类似与body，p等的标签名<br><code>&quot;.A&quot;</code>  A是class名称<br><code>&quot;#A&quot;</code>  A是id名称<br><code>&quot;[A]&quot;</code> A是属性名称<br><code>&quot;:A&quot;</code>  A是伪类选择器</p>
+<p>这几种形式是可以组合使用的。比如<code>$(&quot;ul.menu li.menuItem&quot;)</code>可以选择所有class为menu的ul元素下class为menuItem的li元素。<code>$(&quot;select[name=&#39;staff&#39;][multiple]&quot;)</code>可以选择name为staff，且有属性multiple的select元素。`$(“div#content p:first”)可以选择id为content的div下的第一个p元素</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/jQuery/">jQuery</a>
+  </div>
+
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<section id="comment">
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"unlimited"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+</section>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:unlimited.duapp.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/jQuery/">jQuery</a><small>1</small></li>
+  
+    <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2013 胡勇刚
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
