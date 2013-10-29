@@ -3,13 +3,41 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Unlimited</title>
+  <title>Pratical Common Lisp 读书笔记 | Unlimited</title>
   <meta name="author" content="胡勇刚">
+  
+  <meta name="description" content="第三章
+基础函数
+defvar defun 有不同的作用，定义变量和函数list 可以用来构建一个列表getf 可以用来取出列表中的值setf 可以用来设置列表或者其他元素的值
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+;">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Pratical Common Lisp 读书笔记"/>
   <meta property="og:site_name" content="Unlimited"/>
 
   
@@ -53,8 +81,7 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -64,7 +91,7 @@
       
       
   
-    <h1 class="title"><a href="/2013/10/29/pratical-common-lisp-读书笔记/">Pratical Common Lisp 读书笔记</a></h1>
+    <h1 class="title">Pratical Common Lisp 读书笔记</h1>
   
 
     </header>
@@ -136,42 +163,11 @@
       
         
         
-      
-      <div class="clearfix"></div>
-    </footer>
+  
+  <div class="tags">
+    <a href="/tags/lisp/">lisp</a>
   </div>
-</article>
 
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-10-21T15:55:34.000Z"><a href="/2013/10/21/jquery使用笔记/">10月 21 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/10/21/jquery使用笔记/">jQuery使用笔记</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>jQuery 是世界上使用的最多的一个javascript库之一，它最初提出来的目的是为了解决不同浏览器之间的兼容性问题。而现在，jQuery强大的dom，css操作能力，已经在很大程度上代替了原本的dom操作。</p>
-<p>jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你使用了prototype等库的时候，为了避免命名冲突，可以使用jQuery来运行。甚至可以使用jQuery.conflict()方法给jQuery再取一个别名。</p>
-<h3>jQuery选择器</h3>
-<p>jQuery可以使用css selector的方式取得dom控件，并将其扩展为jQuery对象。 css-selector有一下几种形式：<br><code>&quot;A&quot;</code>   A是类似与body，p等的标签名<br><code>&quot;.A&quot;</code>  A是class名称<br><code>&quot;#A&quot;</code>  A是id名称<br><code>&quot;[A]&quot;</code> A是属性名称<br><code>&quot;:A&quot;</code>  A是伪类选择器</p>
-<p>这几种形式是可以组合使用的。比如<code>$(&quot;ul.menu li.menuItem&quot;)</code>可以选择所有class为menu的ul元素下class为menuItem的li元素。<code>$(&quot;select[name=&#39;staff&#39;][multiple]&quot;)</code>可以选择name为staff，且有属性multiple的select元素。`$(“div#content p:first”)可以选择id为content的div下的第一个p元素</p>
-
-      
-    </div>
-    <footer>
-      
-        
         
       
       <div class="clearfix"></div>
@@ -181,162 +177,26 @@
 
 
 
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-10-21T04:34:47.000Z"><a href="/2013/10/21/使用hexo搭建个人博客/">10月 21 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/10/21/使用hexo搭建个人博客/">使用hexo搭建个人博客</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3>安装node.js</h3>
-<p>在linux下，不要直接使用apt-get安装，ubuntu源中的版本过低，0.6,会导致安装hexo失败。从hexo官网下载源代码，安装的方法和安装其他程序一样。</p>
-<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
-2
-3
-</pre></td><td class="code"><pre>./configure
-<span class="title">make</span>
-<span class="title">make</span> install
-</pre></td></tr></table></figure>
-
-<p>另外可以使用<code>make test</code> 和<code>make doc</code>来生成测试和文档。</p>
-<h3>安装hexo</h3>
-<p>nodejs使用npm来管理nodejs的包。输入如下指令可以安装hexo（需要管理员权限）。</p>
-<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">npm</span> install -g hexo
-</pre></td></tr></table></figure>
-
-<h3>配置</h3>
-<p>进入自己的博客目录，运行命令<code>hexo init</code>就可以将这个目录转换为自己的博客目录。hexo会自动生成几个文件夹和文件，其中<code>config.yml</code>是配置文件，在这个文件中，可以配置博客的一些常规选项，以及发布选项。</p>
-<h3>使用</h3>
-<p><code>hexo new &quot;your_blog_title&quot;</code> 命令用于生成一个新的博客post，然后在source/_posts目录下可以找到post文件，命名方式是“YYYY-mm-dd-your_blog_title”。<br><code>hexo server</code>命令用于启动hexo服务器，默认配置下，<code>localhost:4000</code>可以打开自己的博客。<br><code>hexo deploy</code>命令可以将hexo的博客发布到远程服务器上，hexo支持github，heroku和rsync发布。<br><code>hexo generate</code>可以将自己的post文件转换为一个完整的网站代码。网站放在public目录下。</p>
-<h3>部署到BAE</h3>
-<p>hexo的博客可以通过配置部署到github上，但是github网速明显不行，国内的BAE则提供无限流量……网速那是没话说。</p>
-<p>首先注册成为百度开发者，然后创建一个应用，目前BAE支持，java，python，php以及node.js（需要申请）。hexo是静态网页，因此对技术没要求，但是最好不要选择java环境。java环境下，是一个eclipse项目，你需要将自己的博客复制到webroot下……而且需要修改web.xml。</p>
-<p>创建好应用之后，进入BAE控制台，创建一个新的版本，并将public目录下的文件打包，上传至BAE即可。<br>BAE支持git，但是由于，BAE支持自己创建版本，因此他的git目录下会有以版本号命名的文件夹，项目内容其实放在这些文件夹中……直接使用git提交会出错。需要自己先clone下来，然后在相应版本号中进行修改。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
+<section id="comment">
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"unlimited"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+</section>
 
 
 
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-10-21T03:00:39.000Z"><a href="/2013/10/21/markdown学习笔记/">10月 21 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/10/21/markdown学习笔记/">Markdown学习笔记</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3>Markdown</h3>
-<p>markdown 是一种新型的标记语言，可以很方便的书写，并且转变为html等格式。<br>markdown结合hexo的显示效果：</p>
-<h4>引用</h4>
-<blockquote>
-<p>这是引用的文字</p>
-<blockquote>
-<p>引用中引用文字</p>
-</blockquote>
-</blockquote>
-<h4>代码</h4>
-<p>行间代码<code>class</code><br>代码块</p>
-<figure class="highlight lang-java"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="comment">// java代码</span>
-<span class="comment">// hello, world</span>
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> {</span>
-	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) {
-		System.out.println(<span class="string">"Hello, world!"</span>);
-	}
-}
-</pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2013-10-21T02:48:08.000Z"><a href="/2013/10/21/hello-world/">10月 21 2013</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2013/10/21/hello-world/">Hello World</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Welcome to <a href="http://zespia.tw/hexo" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs" target="_blank">documentation</a> to learn how to use.</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
