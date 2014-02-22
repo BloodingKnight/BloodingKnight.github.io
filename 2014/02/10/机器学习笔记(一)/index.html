@@ -3,25 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>使用hexo搭建个人博客 | Unlimited</title>
+  <title>机器学习笔记（一） | Unlimited</title>
   <meta name="author" content="胡勇刚">
   
-  <meta name="description" content="安装node.js
-在linux下，不要直接使用apt-get安装，ubuntu源中的版本过低，0.6,会导致安装hexo失败。从hexo官网下载源代码，安装的方法和安装其他程序一样。
-1
-2
-3
-./configure
-make
-make install
+  <meta name="description" content="最近看了Coursera上面Machine Learning的课程，在此留下笔记。另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！
+机器学习的用途
+机器学习在生活中有许多用途，常见的有垃圾邮件的拦截，数据挖掘，电脑AI等。
+机器学习的定义
 
-
-另外可以使用make test 和ma">
+Arthu">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="使用hexo搭建个人博客"/>
+  <meta property="og:title" content="机器学习笔记（一）"/>
   <meta property="og:site_name" content="Unlimited"/>
 
   
@@ -71,41 +66,46 @@ make install
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-10-21T04:34:47.000Z"><a href="/2013/10/21/使用hexo搭建个人博客/">10月 21 2013</a></time>
+        <time datetime="2014-02-10T08:19:05.000Z"><a href="/2014/02/10/机器学习笔记(一)/">2月 10 2014</a></time>
       
       
   
-    <h1 class="title">使用hexo搭建个人博客</h1>
+    <h1 class="title">机器学习笔记（一）</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3>安装node.js</h3>
-<p>在linux下，不要直接使用apt-get安装，ubuntu源中的版本过低，0.6,会导致安装hexo失败。从hexo官网下载源代码，安装的方法和安装其他程序一样。</p>
-<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
-2
-3
-</pre></td><td class="code"><pre>./configure
-<span class="title">make</span>
-<span class="title">make</span> install
-</pre></td></tr></table></figure>
-
-<p>另外可以使用<code>make test</code> 和<code>make doc</code>来生成测试和文档。</p>
-<h3>安装hexo</h3>
-<p>nodejs使用npm来管理nodejs的包。输入如下指令可以安装hexo（需要管理员权限）。</p>
-<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">npm</span> install -g hexo
-</pre></td></tr></table></figure>
-
-<h3>配置</h3>
-<p>进入自己的博客目录，运行命令<code>hexo init</code>就可以将这个目录转换为自己的博客目录。hexo会自动生成几个文件夹和文件，其中<code>config.yml</code>是配置文件，在这个文件中，可以配置博客的一些常规选项，以及发布选项。</p>
-<h3>使用</h3>
-<p><code>hexo new &quot;your_blog_title&quot;</code> 命令用于生成一个新的博客post，然后在source/_posts目录下可以找到post文件，命名方式是“YYYY-mm-dd-your_blog_title”。<br><code>hexo server</code>命令用于启动hexo服务器，默认配置下，<code>localhost:4000</code>可以打开自己的博客。<br><code>hexo deploy</code>命令可以将hexo的博客发布到远程服务器上，hexo支持github，heroku和rsync发布。<br><code>hexo generate</code>可以将自己的post文件转换为一个完整的网站代码。网站放在public目录下。</p>
-<h3>部署到BAE</h3>
-<p>hexo的博客可以通过配置部署到github上，但是github网速明显不行，国内的BAE则提供无限流量……网速那是没话说。</p>
-<p>首先注册成为百度开发者，然后创建一个应用，目前BAE支持，java，python，php以及node.js（需要申请）。hexo是静态网页，因此对技术没要求，但是最好不要选择java环境。java环境下，是一个eclipse项目，你需要将自己的博客复制到webroot下……而且需要修改web.xml。</p>
-<p>创建好应用之后，进入BAE控制台，创建一个新的版本，并将public目录下的文件打包，上传至BAE即可。<br>BAE支持git，但是由于，BAE支持自己创建版本，因此他的git目录下会有以版本号命名的文件夹，项目内容其实放在这些文件夹中……直接使用git提交会出错。需要自己先clone下来，然后在相应版本号中进行修改。</p>
+        <p>最近看了Coursera上面Machine Learning的课程，在此留下笔记。<br>另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！</p>
+<h2>机器学习的用途</h2>
+<p>机器学习在生活中有许多用途，常见的有垃圾邮件的拦截，数据挖掘，电脑AI等。</p>
+<h2>机器学习的定义</h2>
+<ul>
+<li><p>Arthur Samuel (1959): </p>
+<blockquote>
+<p>Field of study that gives computers the ability to learn without being explicitly programmed.</p>
+</blockquote>
+<p>他曾经设计了一个Check Game的AI，虽然他本人并不精通这个游戏，但是当AI与AI自己下了许多盘棋之后，AI自己学会了这个游戏，并比作者本人还要玩得好。在这里面由于作者不精通游戏，因此无法显式地将编写出下棋程序，AI必须通过自己学习来学会下棋，这就是机器学习。</p>
+</li>
+<li><p>Tom Mitchell (1998) Well-posed Learning Problem: </p>
+<blockquote>
+<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.</p>
+</blockquote>
+<p>意即对于一个程序，它拥有学习经验E，并处理任务T，使用P来描述程序的表现，如果在处理T时，通过对E进行学习，可以提升他的表现P，那么这就是一个机器学习的程序。<br>对于一个垃圾邮件拦截程序而言：</p>
+<ul>
+<li>拦截垃圾邮件 — 任务T</li>
+<li>用户自己标记垃圾邮件 — 经验E</li>
+<li>垃圾邮件拦截的正确率 — 表现P</li>
+</ul>
+</li>
+</ul>
+<h2>机器学习的分类</h2>
+<p>一般而言，我们可以将机器学习分为两类有监督和无监督。</p>
+<ul>
+<li>有监督（Supervised): 有监督即有人工给出所需的经验，比如在垃圾邮件拦截中，用户自己标记垃圾邮件就属于有监督；在分词程序中，用户提供已经分好词的词库就属于有监督。</li>
+<li>无监督 (Unsupervised): 无监督即指没有人工给出所需的经验，一切都有程序自行来判断。</li>
+</ul>
+<p>在功能上，有监督属于<strong>分类</strong>，而无监督属于<strong>聚类</strong>。<br>另外还有 Reinfocement learning, recommener system等等。</p>
 
       
     </div>
@@ -115,7 +115,7 @@ make install
         
   
   <div class="tags">
-    <a href="/tags/hexo/">hexo</a>
+    <a href="/tags/machine learning/">machine learning</a>
   </div>
 
         
