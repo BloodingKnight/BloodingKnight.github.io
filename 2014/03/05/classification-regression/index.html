@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>jQuery使用笔记 | Unlimited</title>
+    <title>分类（Classification）和回归（Regression） | Unlimited</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="胡勇刚">
     
-    <meta name="description" content="jQuery 是世界上使用的最多的一个javascript库之一，它最初提出来的目的是为了解决不同浏览器之间的兼容性问题。而现在，jQuery强大的dom，css操作能力，已经在很大程度上代替了原本的dom操作。
-jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你使用了">
+    <meta name="description" content="在看Coursera上机器学习的教学视频的时候，学到了两个词：Classfication和Regression。他们是机器学习中常用的两个方法，或者说是需要解决的两类问题。">
     
     
     
@@ -68,15 +67,15 @@ jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2013/10/21/jquery-note/" title="jQuery使用笔记" itemprop="url">jQuery使用笔记</a>
+      <a href="/2014/03/05/classification-regression/" title="分类（Classification）和回归（Regression）" itemprop="url">分类（Classification）和回归（Regression）</a>
   </h1>
   <p class="article-author">By
     
       <a href="https://plus.google.com/106949208244090944547?rel=author" title="胡勇刚" target="_blank" itemprop="author">胡勇刚</a>
     </p>
   <p class="article-time">
-    <time datetime="2013-10-21T15:55:34.000Z" itemprop="datePublished">10月 21 2013</time>
-    更新日期:<time datetime="2013-10-22T02:22:16.000Z" itemprop="dateModified">10月 22 2013</time>
+    <time datetime="2014-03-05T02:39:21.000Z" itemprop="datePublished">3月 5 2014</time>
+    更新日期:<time datetime="2014-03-05T03:26:05.000Z" itemprop="dateModified">3月 5 2014</time>
     
   </p>
 </header>
@@ -85,26 +84,25 @@ jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jquery-"><span class="toc-number">1.</span> <span class="toc-text">jQuery选择器</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#classfication"><span class="toc-number">1.</span> <span class="toc-text">Classfication</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#regression"><span class="toc-number">2.</span> <span class="toc-text">Regression</span></a></li></ol>
 		</div>
 		
-		<p>jQuery 是世界上使用的最多的一个javascript库之一，它最初提出来的目的是为了解决不同浏览器之间的兼容性问题。而现在，jQuery强大的dom，css操作能力，已经在很大程度上代替了原本的dom操作。</p>
-<p>jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你使用了prototype等库的时候，为了避免命名冲突，可以使用jQuery来运行。甚至可以使用jQuery.conflict()方法给jQuery再取一个别名。</p>
-<h3 id="jquery-">jQuery选择器</h3>
-<p>jQuery可以使用css selector的方式取得dom控件，并将其扩展为jQuery对象。 css-selector有一下几种形式：
-<code>&quot;A&quot;</code>   A是类似与body，p等的标签名
-<code>&quot;.A&quot;</code>  A是class名称
-<code>&quot;#A&quot;</code>  A是id名称
-<code>&quot;[A]&quot;</code> A是属性名称
-<code>&quot;:A&quot;</code>  A是伪类选择器</p>
-<p>这几种形式是可以组合使用的。比如<code>$(&quot;ul.menu li.menuItem&quot;)</code>可以选择所有class为menu的ul元素下class为menuItem的li元素。<code>$(&quot;select[name=&#39;staff&#39;][multiple]&quot;)</code>可以选择name为staff，且有属性multiple的select元素。`$(&quot;div#content p:first&quot;)可以选择id为content的div下的第一个p元素</p>
+		<p>在看Coursera上机器学习的教学视频的时候，学到了两个词：Classfication和Regression。他们是机器学习中常用的两个方法，或者说是需要解决的两类问题。
+<a id="more"></a></p>
+<h2 id="classfication">Classfication</h2>
+<p>Classfication比较好理解，就是分类。对于一个问题我们有固定的几种输出就是分类。
+例如，我们要想预测明天的天气情况：下雪，下雨，阴天，多云还是晴天。
+可以看到Classification的输出是离散的变量</p>
+<h2 id="regression">Regression</h2>
+<p>Regression是回归，和分类不同，对于一个问题，他的输出是不固定的，意即输出的是连续的变量。
+例如，我们要想预测公司的营业额。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/jQuery/">jQuery</a>
+  <span></span> <a href="/tags/machine learning/">machine learning</a>
   </div>
 
 
@@ -112,7 +110,7 @@ jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你
 
 <div class="article-share" id="share">
 
-  <div data-url="http://bloodingknight.github.io/2013/10/21/jquery-note/" data-title="jQuery使用笔记 | Unlimited" data-tsina="null" class="share clearfix">
+  <div data-url="http://bloodingknight.github.io/2014/03/05/classification-regression/" data-title="分类（Classification）和回归（Regression） | Unlimited" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -121,19 +119,11 @@ jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2013/10/29/pratical-common-lisp-note-chapter-3/" title="Pratical Common Lisp 读书笔记 (第三章)">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  Pratical Common Lisp 读书笔记 (第三章)</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2013/10/21/hexo-your-blog/"  title="使用hexo搭建个人博客">
+<a href="/2014/02/10/machine-learning-1/"  title="机器学习笔记（一）">
  <strong>NEXT:</strong><br/> 
- <span>使用hexo搭建个人博客
+ <span>机器学习笔记（一）
 </span>
 </a>
 </div>
@@ -151,7 +141,7 @@ jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jquery-"><span class="toc-number">1.</span> <span class="toc-text">jQuery选择器</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#classfication"><span class="toc-number">1.</span> <span class="toc-text">Classfication</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#regression"><span class="toc-number">2.</span> <span class="toc-text">Regression</span></a></li></ol>
   </div>
 
 <div id="asidepart">
