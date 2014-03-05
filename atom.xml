@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://bloodingknight.github.io/"/>
-  <updated>2014-03-05T05:50:44.622Z</updated>
+  <updated>2014-03-05T13:28:04.734Z</updated>
   <id>http://bloodingknight.github.io/</id>
   
   <author>
@@ -190,10 +190,10 @@
     <link href="http://bloodingknight.github.io/2013/10/21/jquery-note/"/>
     <id>http://bloodingknight.github.io/2013/10/21/jquery-note/</id>
     <published>2013-10-21T15:55:34.000Z</published>
-    <updated>2013-10-22T02:22:16.000Z</updated>
+    <updated>2014-03-05T13:27:33.000Z</updated>
     <content type="html"><![CDATA[<p>jQuery 是世界上使用的最多的一个javascript库之一，它最初提出来的目的是为了解决不同浏览器之间的兼容性问题。而现在，jQuery强大的dom，css操作能力，已经在很大程度上代替了原本的dom操作。</p>
 <p>jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你使用了prototype等库的时候，为了避免命名冲突，可以使用jQuery来运行。甚至可以使用jQuery.conflict()方法给jQuery再取一个别名。</p>
-<h3 id="jquery-">jQuery选择器</h3>
+<h2 id="jquery-">jQuery选择器</h2>
 <p>jQuery可以使用css selector的方式取得dom控件，并将其扩展为jQuery对象。 css-selector有一下几种形式：
 <code>&quot;A&quot;</code>   A是类似与body，p等的标签名
 <code>&quot;.A&quot;</code>  A是class名称
