@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | Unlimited</title>
+    <title>jQuery使用笔记 | Unlimited</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="胡勇刚">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation to learn how to use.">
+    <meta name="description" content="jQuery 是世界上使用的最多的一个javascript库之一，它最初提出来的目的是为了解决不同浏览器之间的兼容性问题。而现在，jQuery强大的dom，css操作能力，已经在很大程度上代替了原本的dom操作。
+jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你使用了">
     
     
     
@@ -65,15 +66,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2013/10/21/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2013/10/21/jquery-note/" title="jQuery使用笔记" itemprop="url">jQuery使用笔记</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://bloodingknight.github.io" title="胡勇刚">胡勇刚</a>
     </p>
   <p class="article-time">
-    <time datetime="2013-10-21T02:48:08.000Z" itemprop="datePublished">10月 21 2013</time>
-    更新日期:<time datetime="2013-10-21T02:48:08.000Z" itemprop="dateModified">10月 21 2013</time>
+    <time datetime="2013-10-21T15:55:34.000Z" itemprop="datePublished">10月 21 2013</time>
+    更新日期:<time datetime="2013-10-22T02:22:16.000Z" itemprop="dateModified">10月 22 2013</time>
     
   </p>
 </header>
@@ -82,20 +83,34 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jquery-"><span class="toc-number">1.</span> <span class="toc-text">jQuery选择器</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="http://zespia.tw/hexo" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs" target="_blank">documentation</a> to learn how to use.</p>
+		<p>jQuery 是世界上使用的最多的一个javascript库之一，它最初提出来的目的是为了解决不同浏览器之间的兼容性问题。而现在，jQuery强大的dom，css操作能力，已经在很大程度上代替了原本的dom操作。</p>
+<p>jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你使用了prototype等库的时候，为了避免命名冲突，可以使用jQuery来运行。甚至可以使用jQuery.conflict()方法给jQuery再取一个别名。</p>
+<h3 id="jquery-">jQuery选择器</h3>
+<p>jQuery可以使用css selector的方式取得dom控件，并将其扩展为jQuery对象。 css-selector有一下几种形式：
+<code>&quot;A&quot;</code>   A是类似与body，p等的标签名
+<code>&quot;.A&quot;</code>  A是class名称
+<code>&quot;#A&quot;</code>  A是id名称
+<code>&quot;[A]&quot;</code> A是属性名称
+<code>&quot;:A&quot;</code>  A是伪类选择器</p>
+<p>这几种形式是可以组合使用的。比如<code>$(&quot;ul.menu li.menuItem&quot;)</code>可以选择所有class为menu的ul元素下class为menuItem的li元素。<code>$(&quot;select[name=&#39;staff&#39;][multiple]&quot;)</code>可以选择name为staff，且有属性multiple的select元素。`$(&quot;div#content p:first&quot;)可以选择id为content的div下的第一个p元素</p>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/jQuery/">jQuery</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://bloodingknight.github.io/2013/10/21/hello-world/" data-title="Hello World | Unlimited" data-tsina="null" class="share clearfix">
+  <div data-url="http://bloodingknight.github.io/2013/10/21/jquery-note/" data-title="jQuery使用笔记 | Unlimited" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -105,13 +120,21 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2013/10/21/markdown-note/" title="Markdown学习笔记">
+ <a href="/2013/10/29/pratical-common-lisp-note-chapter-3/" title="Pratical Common Lisp 读书笔记 (第三章)">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  Markdown学习笔记</span>
+  Pratical Common Lisp 读书笔记 (第三章)</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2013/10/21/hexo-your-blog/"  title="使用hexo搭建个人博客">
+ <strong>NEXT:</strong><br/> 
+ <span>使用hexo搭建个人博客
+</span>
+</a>
+</div>
 
 </nav>
 
@@ -122,7 +145,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#jquery-"><span class="toc-number">1.</span> <span class="toc-text">jQuery选择器</span></a></li></ol>
   </div>
 
 <div id="asidepart">

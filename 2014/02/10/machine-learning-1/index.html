@@ -4,12 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | Unlimited</title>
+    <title>机器学习笔记（一） | Unlimited</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="胡勇刚">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation to learn how to use.">
+    <meta name="description" content="最近看了Coursera上面Machine Learning的课程，在此留下笔记。
+另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！
+机器学习的用途
+机器学习在生活中有许多用途，常见的有垃圾邮件的拦截，数据挖掘，电脑AI等。
+机器学习的定义
+
+Arth">
     
     
     
@@ -65,15 +71,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2013/10/21/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2014/02/10/machine-learning-1/" title="机器学习笔记（一）" itemprop="url">机器学习笔记（一）</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://bloodingknight.github.io" title="胡勇刚">胡勇刚</a>
     </p>
   <p class="article-time">
-    <time datetime="2013-10-21T02:48:08.000Z" itemprop="datePublished">10月 21 2013</time>
-    更新日期:<time datetime="2013-10-21T02:48:08.000Z" itemprop="dateModified">10月 21 2013</time>
+    <time datetime="2014-02-10T08:19:05.000Z" itemprop="datePublished">2月 10 2014</time>
+    更新日期:<time datetime="2014-02-10T09:28:05.000Z" itemprop="dateModified">2月 10 2014</time>
     
   </p>
 </header>
@@ -82,20 +88,57 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">机器学习的用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">机器学习的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">机器学习的分类</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="http://zespia.tw/hexo" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs" target="_blank">documentation</a> to learn how to use.</p>
+		<p>最近看了Coursera上面Machine Learning的课程，在此留下笔记。
+另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！</p>
+<h2 id="-">机器学习的用途</h2>
+<p>机器学习在生活中有许多用途，常见的有垃圾邮件的拦截，数据挖掘，电脑AI等。</p>
+<h2 id="-">机器学习的定义</h2>
+<ul>
+<li><p>Arthur Samuel (1959): </p>
+<blockquote>
+<p>Field of study that gives computers the ability to learn without being explicitly programmed.</p>
+</blockquote>
+<p>他曾经设计了一个Check Game的AI，虽然他本人并不精通这个游戏，但是当AI与AI自己下了许多盘棋之后，AI自己学会了这个游戏，并比作者本人还要玩得好。在这里面由于作者不精通游戏，因此无法显式地将编写出下棋程序，AI必须通过自己学习来学会下棋，这就是机器学习。</p>
+</li>
+<li><p>Tom Mitchell (1998) Well-posed Learning Problem: </p>
+<blockquote>
+<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.</p>
+</blockquote>
+<p>意即对于一个程序，它拥有学习经验E，并处理任务T，使用P来描述程序的表现，如果在处理T时，通过对E进行学习，可以提升他的表现P，那么这就是一个机器学习的程序。
+对于一个垃圾邮件拦截程序而言：</p>
+<ul>
+<li>拦截垃圾邮件 -- 任务T</li>
+<li>用户自己标记垃圾邮件 -- 经验E</li>
+<li>垃圾邮件拦截的正确率 -- 表现P</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">机器学习的分类</h2>
+<p>一般而言，我们可以将机器学习分为两类有监督和无监督。</p>
+<ul>
+<li>有监督（Supervised): 有监督即有人工给出所需的经验，比如在垃圾邮件拦截中，用户自己标记垃圾邮件就属于有监督；在分词程序中，用户提供已经分好词的词库就属于有监督。</li>
+<li>无监督 (Unsupervised): 无监督即指没有人工给出所需的经验，一切都有程序自行来判断。</li>
+</ul>
+<p>在功能上，有监督属于<strong>分类</strong>，而无监督属于<strong>聚类</strong>。
+另外还有 Reinfocement learning, recommener system等等。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/machine learning/">machine learning</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://bloodingknight.github.io/2013/10/21/hello-world/" data-title="Hello World | Unlimited" data-tsina="null" class="share clearfix">
+  <div data-url="http://bloodingknight.github.io/2014/02/10/machine-learning-1/" data-title="机器学习笔记（一） | Unlimited" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -104,14 +147,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2013/10/21/markdown-note/" title="Markdown学习笔记">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  Markdown学习笔记</span>
+
+<div class="next">
+<a href="/2013/10/29/pratical-common-lisp-note-chapter-3/"  title="Pratical Common Lisp 读书笔记 (第三章)">
+ <strong>NEXT:</strong><br/> 
+ <span>Pratical Common Lisp 读书笔记 (第三章)
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -122,7 +165,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">机器学习的用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">机器学习的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">机器学习的分类</span></a></li></ol>
   </div>
 
 <div id="asidepart">

@@ -4,12 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | Unlimited</title>
+    <title>使用hexo搭建个人博客 | Unlimited</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="胡勇刚">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation to learn how to use.">
+    <meta name="description" content="安装node.js
+在linux下，不要直接使用apt-get安装，ubuntu源中的版本过低，0.6,会导致安装hexo失败。从hexo官网下载源代码，安装的方法和安装其他程序一样。
+1
+2
+3
+./configure
+make
+make install
+
+
+另外可以使用make test 和ma">
     
     
     
@@ -65,15 +75,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2013/10/21/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2013/10/21/hexo-your-blog/" title="使用hexo搭建个人博客" itemprop="url">使用hexo搭建个人博客</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://bloodingknight.github.io" title="胡勇刚">胡勇刚</a>
     </p>
   <p class="article-time">
-    <time datetime="2013-10-21T02:48:08.000Z" itemprop="datePublished">10月 21 2013</time>
-    更新日期:<time datetime="2013-10-21T02:48:08.000Z" itemprop="dateModified">10月 21 2013</time>
+    <time datetime="2013-10-21T04:34:47.000Z" itemprop="datePublished">10月 21 2013</time>
+    更新日期:<time datetime="2013-10-22T01:47:50.000Z" itemprop="dateModified">10月 22 2013</time>
     
   </p>
 </header>
@@ -82,20 +92,53 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#-node-js"><span class="toc-number">1.</span> <span class="toc-text">安装node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-hexo"><span class="toc-number">2.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">4.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-bae"><span class="toc-number">5.</span> <span class="toc-text">部署到BAE</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="http://zespia.tw/hexo" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs" target="_blank">documentation</a> to learn how to use.</p>
+		<h3 id="-node-js">安装node.js</h3>
+<p>在linux下，不要直接使用apt-get安装，ubuntu源中的版本过低，0.6,会导致安装hexo失败。从hexo官网下载源代码，安装的方法和安装其他程序一样。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>./configure
+<span class="built_in">make</span>
+<span class="built_in">make</span> install
+</pre></td></tr></table></figure>
+
+<p>另外可以使用<code>make test</code> 和<code>make doc</code>来生成测试和文档。</p>
+<h3 id="-hexo">安装hexo</h3>
+<p>nodejs使用npm来管理nodejs的包。输入如下指令可以安装hexo（需要管理员权限）。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm <span class="keyword">install</span> -g hexo
+</pre></td></tr></table></figure>
+
+<h3 id="-">配置</h3>
+<p>进入自己的博客目录，运行命令<code>hexo init</code>就可以将这个目录转换为自己的博客目录。hexo会自动生成几个文件夹和文件，其中<code>config.yml</code>是配置文件，在这个文件中，可以配置博客的一些常规选项，以及发布选项。</p>
+<h3 id="-">使用</h3>
+<p><code>hexo new &quot;your_blog_title&quot;</code> 命令用于生成一个新的博客post，然后在source/_posts目录下可以找到post文件，命名方式是“YYYY-mm-dd-your_blog_title”。
+<code>hexo server</code>命令用于启动hexo服务器，默认配置下，<code>localhost:4000</code>可以打开自己的博客。
+<code>hexo deploy</code>命令可以将hexo的博客发布到远程服务器上，hexo支持github，heroku和rsync发布。
+<code>hexo generate</code>可以将自己的post文件转换为一个完整的网站代码。网站放在public目录下。</p>
+<h3 id="-bae">部署到BAE</h3>
+<p>hexo的博客可以通过配置部署到github上，但是github网速明显不行，国内的BAE则提供无限流量……网速那是没话说。</p>
+<p>首先注册成为百度开发者，然后创建一个应用，目前BAE支持，java，python，php以及node.js（需要申请）。hexo是静态网页，因此对技术没要求，但是最好不要选择java环境。java环境下，是一个eclipse项目，你需要将自己的博客复制到webroot下……而且需要修改web.xml。</p>
+<p>创建好应用之后，进入BAE控制台，创建一个新的版本，并将public目录下的文件打包，上传至BAE即可。
+BAE支持git，但是由于，BAE支持自己创建版本，因此他的git目录下会有以版本号命名的文件夹，项目内容其实放在这些文件夹中……直接使用git提交会出错。需要自己先clone下来，然后在相应版本号中进行修改。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/hexo/">hexo</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://bloodingknight.github.io/2013/10/21/hello-world/" data-title="Hello World | Unlimited" data-tsina="null" class="share clearfix">
+  <div data-url="http://bloodingknight.github.io/2013/10/21/hexo-your-blog/" data-title="使用hexo搭建个人博客 | Unlimited" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -105,13 +148,21 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2013/10/21/markdown-note/" title="Markdown学习笔记">
+ <a href="/2013/10/21/jquery-note/" title="jQuery使用笔记">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  Markdown学习笔记</span>
+  jQuery使用笔记</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2013/10/21/markdown-note/"  title="Markdown学习笔记">
+ <strong>NEXT:</strong><br/> 
+ <span>Markdown学习笔记
+</span>
+</a>
+</div>
 
 </nav>
 
@@ -122,7 +173,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#-node-js"><span class="toc-number">1.</span> <span class="toc-text">安装node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-hexo"><span class="toc-number">2.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">4.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-bae"><span class="toc-number">5.</span> <span class="toc-text">部署到BAE</span></a></li></ol>
   </div>
 
 <div id="asidepart">
