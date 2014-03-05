@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Unlimited]]></title>
+  <subtitle><![CDATA[Blog of my life]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://bloodingknight.github.io/"/>
+  <updated>2014-03-05T05:21:46.406Z</updated>
+  <id>http://bloodingknight.github.io/</id>
+  
+  <author>
+    <name><![CDATA[胡勇刚]]></name>
+    <email><![CDATA[unlimited@bupt.edu.cn]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[求一个函数的最小值]]></title>
+    <link href="http://bloodingknight.github.io/2014/03/05/min-value-function/"/>
+    <id>http://bloodingknight.github.io/2014/03/05/min-value-function/</id>
+    <published>2014-03-05T03:30:16.000Z</published>
+    <updated>2014-03-05T03:43:25.000Z</updated>
+    <content type="html"><![CDATA[<p>在机器学习中经常需要使用到求函数的最小值，一般而言有如下几种方法：梯度下降法（Gradient Decent)，牛顿法，Fisher-得分法。
+<a id="more"></a></p>
+<h2 id="-">梯度下降法</h2>
+<h2 id="-">牛顿法</h2>
+<h2 id="fisher-">Fisher-得分法</h2>
+]]></content>
+    <summary type="html"><![CDATA[<p>在机器学习中经常需要使用到求函数的最小值，一般而言有如下几种方法：梯度下降法（Gradient Decent)，牛顿法，Fisher-得分法。
+]]></summary>
+    
+      <category term="machine learning" scheme="http://bloodingknight.github.io/tags/machine%20learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[分类（Classification）和回归（Regression）]]></title>
+    <link href="http://bloodingknight.github.io/2014/03/05/classification-regression/"/>
+    <id>http://bloodingknight.github.io/2014/03/05/classification-regression/</id>
+    <published>2014-03-05T02:39:21.000Z</published>
+    <updated>2014-03-05T03:26:05.000Z</updated>
+    <content type="html"><![CDATA[<p>在看Coursera上机器学习的教学视频的时候，学到了两个词：Classfication和Regression。他们是机器学习中常用的两个方法，或者说是需要解决的两类问题。
+<a id="more"></a></p>
+<h2 id="classfication">Classfication</h2>
+<p>Classfication比较好理解，就是分类。对于一个问题我们有固定的几种输出就是分类。
+例如，我们要想预测明天的天气情况：下雪，下雨，阴天，多云还是晴天。
+可以看到Classification的输出是离散的变量</p>
+<h2 id="regression">Regression</h2>
+<p>Regression是回归，和分类不同，对于一个问题，他的输出是不固定的，意即输出的是连续的变量。
+例如，我们要想预测公司的营业额。</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>在看Coursera上机器学习的教学视频的时候，学到了两个词：Classfication和Regression。他们是机器学习中常用的两个方法，或者说是需要解决的两类问题。
+]]></summary>
+    
+      <category term="machine learning" scheme="http://bloodingknight.github.io/tags/machine%20learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[机器学习笔记（一）]]></title>
+    <link href="http://bloodingknight.github.io/2014/02/10/machine-learning-1/"/>
+    <id>http://bloodingknight.github.io/2014/02/10/machine-learning-1/</id>
+    <published>2014-02-10T08:19:05.000Z</published>
+    <updated>2014-03-05T03:34:11.000Z</updated>
+    <content type="html"><![CDATA[<p>最近看了Coursera上面Machine Learning的课程，在此留下笔记。</p>
+<p>另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！</p>
+<p>又另：coursera-dl只能在linux下使用！
+<a id="more"></a></p>
+<h2 id="-">机器学习的用途</h2>
+<p>机器学习在生活中有许多用途，常见的有垃圾邮件的拦截，数据挖掘，电脑AI等。</p>
+<h2 id="-">机器学习的定义</h2>
+<ul>
+<li><p>Arthur Samuel (1959): </p>
+<blockquote>
+<p>Field of study that gives computers the ability to learn without being explicitly programmed.</p>
+</blockquote>
+<p>他曾经设计了一个Check Game的AI，虽然他本人并不精通这个游戏，但是当AI与AI自己下了许多盘棋之后，AI自己学会了这个游戏，并比作者本人还要玩得好。在这里面由于作者不精通游戏，因此无法显式地将编写出下棋程序，AI必须通过自己学习来学会下棋，这就是机器学习。</p>
+</li>
+<li><p>Tom Mitchell (1998) Well-posed Learning Problem: </p>
+<blockquote>
+<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.</p>
+</blockquote>
+<p>意即对于一个程序，它拥有学习经验E，并处理任务T，使用P来描述程序的表现，如果在处理T时，通过对E进行学习，可以提升他的表现P，那么这就是一个机器学习的程序。
+对于一个垃圾邮件拦截程序而言：</p>
+<ul>
+<li>拦截垃圾邮件 -- 任务T</li>
+<li>用户自己标记垃圾邮件 -- 经验E</li>
+<li>垃圾邮件拦截的正确率 -- 表现P</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">机器学习的分类</h2>
+<p>一般而言，我们可以将机器学习分为两类有监督和无监督。</p>
+<ul>
+<li>有监督（Supervised): 有监督即有人工给出所需的经验，比如在垃圾邮件拦截中，用户自己标记垃圾邮件就属于有监督；在分词程序中，用户提供已经分好词的词库就属于有监督。</li>
+<li>无监督 (Unsupervised): 无监督即指没有人工给出所需的经验，一切都有程序自行来判断。</li>
+</ul>
+<p>在功能上，有监督属于<strong>分类</strong>，而无监督属于<strong>聚类</strong>。
+另外还有 Reinfocement learning, recommener system等等。</p>
+]]></content>
+    <summary type="html"><![CDATA[<p>最近看了Coursera上面Machine Learning的课程，在此留下笔记。</p>
+<p>另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！</p>
+<p>又另：coursera-dl只能在linux下使用！
+]]></summary>
+    
+      <category term="machine learning" scheme="http://bloodingknight.github.io/tags/machine%20learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Pratical Common Lisp 读书笔记 (第三章)]]></title>
+    <link href="http://bloodingknight.github.io/2013/10/29/pratical-common-lisp-note-chapter-3/"/>
+    <id>http://bloodingknight.github.io/2013/10/29/pratical-common-lisp-note-chapter-3/</id>
+    <published>2013-10-29T03:05:25.000Z</published>
+    <updated>2013-10-29T08:05:06.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-">第三章</h2>
+<h3 id="-">基础函数</h3>
+<p><code>defvar</code> <code>defun</code> 有不同的作用，定义变量和函数
+<code>list</code> 可以用来构建一个列表
+<code>getf</code> 可以用来取出列表中的值
+<code>setf</code> 可以用来设置列表或者其他元素的值</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="code"><pre><span class="comment">;;; 定义一个列表，元素是1 2 3</span>
+<span class="list">(<span class="title">list</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>
+<span class="comment">;;; 定义一个列表，元素是a b c</span>
+<span class="comment">;;; 在lisp中任何字符串如果直接出现都会被lisp求值，在字符串前面放置'，可以使用他的字面值</span>
+<span class="list">(<span class="title">list</span> 'a 'b 'c)</span>
+<span class="comment">;;; 定义一个列表，列表的值是键值对</span>
+<span class="list">(<span class="title">list</span> <span class="keyword">:a</span> <span class="number">1</span> <span class="keyword">:b</span> <span class="number">2</span> <span class="keyword">:c</span> <span class="number">3</span>)</span>
+<span class="comment">;;; 取出列表的值</span>
+<span class="list">(<span class="title">getf</span> <span class="list">(<span class="title">list</span> <span class="keyword">:a</span> <span class="number">1</span> <span class="keyword">:b</span> <span class="number">2</span> <span class="keyword">:c</span> <span class="number">3</span>)</span> <span class="keyword">:a</span>)</span> <span class="comment">; 1</span>
+<span class="comment">;;; 实际上，list会自动将自己的值，每两个分为一对</span>
+<span class="list">(<span class="title">getf</span> <span class="list">(<span class="title">list</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>)</span> <span class="number">1</span>)</span> <span class="comment">;2</span>
+<span class="list">(<span class="title">getf</span> <span class="list">(<span class="title">list</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>)</span> <span class="number">2</span>)</span> <span class="comment">;NIL</span>
+<span class="comment">;;; 定义一个变量</span>
+<span class="list">(<span class="title">defvar</span> str <span class="string">"hello"</span>)</span>
+<span class="list">(<span class="title">defvar</span> aList <span class="list">(<span class="title">list</span> <span class="keyword">:a</span> <span class="number">1</span> <span class="keyword">:b</span> <span class="number">2</span> <span class="keyword">:c</span> <span class="number">3</span>)</span>)</span>
+<span class="comment">;;; 修改变量的值</span>
+<span class="list">(<span class="title">setf</span> str <span class="string">"hello, world"</span>)</span> <span class="comment">;对已经定义过的变量重新使用defvar定义不会修改他的值</span>
+<span class="list">(<span class="title">setf</span> <span class="list">(<span class="title">getf</span> aList <span class="keyword">:a</span>)</span> <span class="number">2</span>)</span>
+<span class="comment">;;; 定义一个函数</span>
+<span class="list">(<span class="title">defun</span> myfun <span class="list">(<span class="title">args</span>)</span>
+  <span class="list">(<span class="title">format</span> <span class="literal">t</span> args)</span>
+)</span>
+<span class="list">(<span class="title">myfun</span> str)</span>
+</pre></td></tr></table></figure>
+
+<h3 id="-">输入与输出</h3>
+<p><code>format</code> 函数可用于输出
+<code>read-line</code> 读取一行字符
+<code>t</code> 代表控制台
+<code>*query-io*</code> 代表默认io</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="list">(<span class="title">format</span> <span class="literal">t</span> <span class="string">"hello, world"</span>)</span>
+<span class="list">(<span class="title">read-line</span> <span class="variable">*query-io*</span>)</span>
+</pre></td></tr></table></figure>
+
+]]></content>
+    
+    
+      <category term="lisp" scheme="http://bloodingknight.github.io/tags/lisp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[jQuery使用笔记]]></title>
+    <link href="http://bloodingknight.github.io/2013/10/21/jquery-note/"/>
+    <id>http://bloodingknight.github.io/2013/10/21/jquery-note/</id>
+    <published>2013-10-21T15:55:34.000Z</published>
+    <updated>2013-10-22T02:22:16.000Z</updated>
+    <content type="html"><![CDATA[<p>jQuery 是世界上使用的最多的一个javascript库之一，它最初提出来的目的是为了解决不同浏览器之间的兼容性问题。而现在，jQuery强大的dom，css操作能力，已经在很大程度上代替了原本的dom操作。</p>
+<p>jQuery最主要的方法是jQuery或者是$，$是jQuery的一个别名，当你使用了prototype等库的时候，为了避免命名冲突，可以使用jQuery来运行。甚至可以使用jQuery.conflict()方法给jQuery再取一个别名。</p>
+<h3 id="jquery-">jQuery选择器</h3>
+<p>jQuery可以使用css selector的方式取得dom控件，并将其扩展为jQuery对象。 css-selector有一下几种形式：
+<code>&quot;A&quot;</code>   A是类似与body，p等的标签名
+<code>&quot;.A&quot;</code>  A是class名称
+<code>&quot;#A&quot;</code>  A是id名称
+<code>&quot;[A]&quot;</code> A是属性名称
+<code>&quot;:A&quot;</code>  A是伪类选择器</p>
+<p>这几种形式是可以组合使用的。比如<code>$(&quot;ul.menu li.menuItem&quot;)</code>可以选择所有class为menu的ul元素下class为menuItem的li元素。<code>$(&quot;select[name=&#39;staff&#39;][multiple]&quot;)</code>可以选择name为staff，且有属性multiple的select元素。`$(&quot;div#content p:first&quot;)可以选择id为content的div下的第一个p元素</p>
+]]></content>
+    
+    
+      <category term="jQuery" scheme="http://bloodingknight.github.io/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[使用hexo搭建个人博客]]></title>
+    <link href="http://bloodingknight.github.io/2013/10/21/hexo-your-blog/"/>
+    <id>http://bloodingknight.github.io/2013/10/21/hexo-your-blog/</id>
+    <published>2013-10-21T04:34:47.000Z</published>
+    <updated>2013-10-22T01:47:50.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="-node-js">安装node.js</h3>
+<p>在linux下，不要直接使用apt-get安装，ubuntu源中的版本过低，0.6,会导致安装hexo失败。从hexo官网下载源代码，安装的方法和安装其他程序一样。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>./configure
+<span class="built_in">make</span>
+<span class="built_in">make</span> install
+</pre></td></tr></table></figure>
+
+<p>另外可以使用<code>make test</code> 和<code>make doc</code>来生成测试和文档。</p>
+<h3 id="-hexo">安装hexo</h3>
+<p>nodejs使用npm来管理nodejs的包。输入如下指令可以安装hexo（需要管理员权限）。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>npm <span class="keyword">install</span> -g hexo
+</pre></td></tr></table></figure>
+
+<h3 id="-">配置</h3>
+<p>进入自己的博客目录，运行命令<code>hexo init</code>就可以将这个目录转换为自己的博客目录。hexo会自动生成几个文件夹和文件，其中<code>config.yml</code>是配置文件，在这个文件中，可以配置博客的一些常规选项，以及发布选项。</p>
+<h3 id="-">使用</h3>
+<p><code>hexo new &quot;your_blog_title&quot;</code> 命令用于生成一个新的博客post，然后在source/_posts目录下可以找到post文件，命名方式是“YYYY-mm-dd-your_blog_title”。
+<code>hexo server</code>命令用于启动hexo服务器，默认配置下，<code>localhost:4000</code>可以打开自己的博客。
+<code>hexo deploy</code>命令可以将hexo的博客发布到远程服务器上，hexo支持github，heroku和rsync发布。
+<code>hexo generate</code>可以将自己的post文件转换为一个完整的网站代码。网站放在public目录下。</p>
+<h3 id="-bae">部署到BAE</h3>
+<p>hexo的博客可以通过配置部署到github上，但是github网速明显不行，国内的BAE则提供无限流量……网速那是没话说。</p>
+<p>首先注册成为百度开发者，然后创建一个应用，目前BAE支持，java，python，php以及node.js（需要申请）。hexo是静态网页，因此对技术没要求，但是最好不要选择java环境。java环境下，是一个eclipse项目，你需要将自己的博客复制到webroot下……而且需要修改web.xml。</p>
+<p>创建好应用之后，进入BAE控制台，创建一个新的版本，并将public目录下的文件打包，上传至BAE即可。
+BAE支持git，但是由于，BAE支持自己创建版本，因此他的git目录下会有以版本号命名的文件夹，项目内容其实放在这些文件夹中……直接使用git提交会出错。需要自己先clone下来，然后在相应版本号中进行修改。</p>
+]]></content>
+    
+    
+      <category term="hexo" scheme="http://bloodingknight.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Markdown学习笔记]]></title>
+    <link href="http://bloodingknight.github.io/2013/10/21/markdown-note/"/>
+    <id>http://bloodingknight.github.io/2013/10/21/markdown-note/</id>
+    <published>2013-10-21T03:00:39.000Z</published>
+    <updated>2013-10-21T04:51:48.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="markdown">Markdown</h3>
+<p>markdown 是一种新型的标记语言，可以很方便的书写，并且转变为html等格式。
+markdown结合hexo的显示效果：</p>
+<h4 id="-">引用</h4>
+<blockquote>
+<p>这是引用的文字</p>
+<blockquote>
+<p>引用中引用文字</p>
+</blockquote>
+</blockquote>
+<h4 id="-">代码</h4>
+<p>行间代码<code>class</code>
+代码块</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="comment">// java代码</span>
+<span class="comment">// hello, world</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> {</span>
+	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
+		System.out.println(<span class="string">"Hello, world!"</span>);
+	}
+}
+</pre></td></tr></table></figure>
+
+]]></content>
+    
+    
+      <category term="markdown" scheme="http://bloodingknight.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://bloodingknight.github.io/2013/10/21/hello-world/"/>
+    <id>http://bloodingknight.github.io/2013/10/21/hello-world/</id>
+    <published>2013-10-21T02:48:08.000Z</published>
+    <updated>2013-10-21T02:48:08.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://zespia.tw/hexo" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://zespia.tw/hexo/docs" target="_blank">documentation</a> to learn how to use.</p>
+]]></content>
+    
+    
+  </entry>
+  
+</feed>
