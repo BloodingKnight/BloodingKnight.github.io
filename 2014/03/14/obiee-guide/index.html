@@ -4,14 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>机器学习笔记（一） | Unlimited</title>
+    <title>OBIEE 使用小记 | Unlimited</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="胡勇刚">
     
-    <meta name="description" content="最近看了Coursera上面Machine Learning的课程，在此留下笔记。
-另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！
-又另：coursera-dl只能在linux下使用！">
+    <meta name="description" content="安装
+首先去官方网站下载rcu，和obiee
+rcu：
+obiee：
+复制数据库
+分离和备份都不适合。
+
+由原数据库创建create脚本。
+创建一个新的数据库，将排序规则设置为Chinese_PRC_CS_AS，(后面会用到)
+由create脚本将源数据库中的表在新数据库中重建
+选择导入数据，将数据">
     
     
     
@@ -71,15 +79,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/02/10/machine-learning-1/" title="机器学习笔记（一）" itemprop="url">机器学习笔记（一）</a>
+      <a href="/2014/03/14/obiee-guide/" title="OBIEE 使用小记" itemprop="url">OBIEE 使用小记</a>
   </h1>
   <p class="article-author">By
     
       <a href="https://plus.google.com/106949208244090944547?rel=author" title="胡勇刚" target="_blank" itemprop="author">胡勇刚</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-02-10T08:19:05.000Z" itemprop="datePublished">2月 10 2014</time>
-    更新日期:<time datetime="2014-03-05T03:34:11.000Z" itemprop="dateModified">3月 5 2014</time>
+    <time datetime="2014-03-14T07:42:09.000Z" itemprop="datePublished">3月 14 2014</time>
+    更新日期:<time datetime="2014-03-14T09:01:27.000Z" itemprop="dateModified">3月 14 2014</time>
     
   </p>
 </header>
@@ -88,51 +96,103 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">机器学习的用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">机器学习的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">机器学习的分类</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">1.1.</span> <span class="toc-text">复制数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-rcu"><span class="toc-number">1.2.</span> <span class="toc-text">安装rcu</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-obiee"><span class="toc-number">1.3.</span> <span class="toc-text">安装obiee</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">分析-公司不同时期分数对比</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2013-"><span class="toc-number">2.1.</span> <span class="toc-text">2013年第一次尝试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2014-"><span class="toc-number">2.2.</span> <span class="toc-text">2014年第一次尝试</span></a></li></ol>
 		</div>
 		
-		<p>最近看了Coursera上面Machine Learning的课程，在此留下笔记。</p>
-<p>另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！</p>
-<p>又另：coursera-dl只能在linux下使用！
-<a id="more"></a></p>
-<h2 id="-">机器学习的用途</h2>
-<p>机器学习在生活中有许多用途，常见的有垃圾邮件的拦截，数据挖掘，电脑AI等。</p>
-<h2 id="-">机器学习的定义</h2>
-<ul>
-<li><p>Arthur Samuel (1959): </p>
+		<h2 id="-">安装</h2>
+<p>首先去官方网站下载rcu，和obiee
+rcu：
+obiee：</p>
+<h3 id="-">复制数据库</h3>
+<p>分离和备份都不适合。</p>
+<ol>
+<li>由原数据库创建create脚本。</li>
+<li>创建一个新的数据库，将排序规则设置为Chinese_PRC_CS_AS，(后面会用到)</li>
+<li>由create脚本将源数据库中的表在新数据库中重建</li>
+<li>选择导入数据，将数据从原数据库中导入，如果数据库中的id是自增的标示符，则选中标示符插入。
+这样数据库就备份好了。
+如果</li>
+<li>直接选择导入数据，则会发现新数据库中的表没有主外键，自增等关系</li>
+<li>出现“id为只读属性”类似错误，或者“VS_ISBROKEN&quot;这种错误，则在相应的表复制时，选中标示符插入</li>
+</ol>
+<h3 id="-rcu">安装rcu</h3>
+<p>下载好rcu后，解压，运行BIN目录下的rcu.bat文件，一路点过去。
+如果出现错误，按照提示在ssms中运行相应的sql语句，注意，这几个语句需要占有排它锁，建议关闭其他链接后运行</p>
+<h3 id="-obiee">安装obiee</h3>
+<p>运行DISK1/setup.exe
+一路点过去，
+如果出现“返回的是ip而不是域名”类似的错误，则想Windows/system32/drivers/etc/hosts文件内，添加一行，对应自己的ip和自己想填写的域名。</p>
+<p>安装出错！！！
+到第14步时，进程走到了18%就不动了，然后说设置数据库连接错误！！！
+卸载失败！！！
+记得备份注册表。最好有一个虚拟机……</p>
+<h2 id="-">分析-公司不同时期分数对比</h2>
+<p>使用线图</p>
+<pre><code>Entity &lt;--- Department &lt;--- CItemResult ---&gt; AuditTask
+</code></pre><p>统计各公司在不同AuditTask的情况下的总得分，并且用线图表示。
+那么就使用数据钻取功能，建立一个新的维度。</p>
+<h3 id="2013-">2013年第一次尝试</h3>
+<ol>
+<li><p>第一次尝试：<br>按照<a href="http://www.cnblogs.com/yjmyzz/archive/2012/11/30/2787952.html" target="_blank">博客</a>中的例子进行，在业务模型区域，新建逻辑维test，并且将CItemResult, Department, CustEntity三张表的id，按照父子级别放入test之中，然后拖入表示区域，并将test维放在CustEntity_Dept下面。结果除了如下的错误。</p>
 <blockquote>
-<p>Field of study that gives computers the ability to learn without being explicitly programmed.</p>
+<p>ERRORS:<br>业务模型 CPSecSMS:<br>[nQSError: 15003] 维表 [CustEntity,Department] 缺少最详细表。<br>[nQSError: 15001] 无法加载主题区域 CPSecSMS 的导航空间。</p>
 </blockquote>
-<p>他曾经设计了一个Check Game的AI，虽然他本人并不精通这个游戏，但是当AI与AI自己下了许多盘棋之后，AI自己学会了这个游戏，并比作者本人还要玩得好。在这里面由于作者不精通游戏，因此无法显式地将编写出下棋程序，AI必须通过自己学习来学会下棋，这就是机器学习。</p>
 </li>
-<li><p>Tom Mitchell (1998) Well-posed Learning Problem: </p>
+<li><p>第二次尝试：<br> 将test维度中的dept, entity对象改为CustEntity_Dept中的各个id，仍然出错：</p>
 <blockquote>
-<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.</p>
+<p>ERRORS:<br>业务模型 CPSecSMS:<br>[nQSError: 15034] 维 test 不与任何维表相关联。<br>[nQSError: 15001] 无法加载主题区域 CPSecSMS 的导航空间。</p>
 </blockquote>
-<p>意即对于一个程序，它拥有学习经验E，并处理任务T，使用P来描述程序的表现，如果在处理T时，通过对E进行学习，可以提升他的表现P，那么这就是一个机器学习的程序。
-对于一个垃圾邮件拦截程序而言：</p>
-<ul>
-<li>拦截垃圾邮件 -- 任务T</li>
-<li>用户自己标记垃圾邮件 -- 经验E</li>
-<li>垃圾邮件拦截的正确率 -- 表现P</li>
-</ul>
 </li>
-</ul>
-<h2 id="-">机器学习的分类</h2>
-<p>一般而言，我们可以将机器学习分为两类有监督和无监督。</p>
-<ul>
-<li>有监督（Supervised): 有监督即有人工给出所需的经验，比如在垃圾邮件拦截中，用户自己标记垃圾邮件就属于有监督；在分词程序中，用户提供已经分好词的词库就属于有监督。</li>
-<li>无监督 (Unsupervised): 无监督即指没有人工给出所需的经验，一切都有程序自行来判断。</li>
-</ul>
-<p>在功能上，有监督属于<strong>分类</strong>，而无监督属于<strong>聚类</strong>。
-另外还有 Reinfocement learning, recommener system等等。</p>
+<li><p>第三次尝试：<br> 将test维度中的entity对象改为CustEntity中的id，dept对象是CustEntity_Dept中的id，保存成功。但是依旧无法钻取，Entity，Department，Result同时出现的时候就会出错。</p>
+</li>
+<li><p>第四次尝试：<br> 新建一个视图，将CustEntity, Department, CItemResult三张表的关系放在一起，并根据这三个id建立逻辑维BI_EDR，出错：</p>
+<blockquote>
+<p>ERRORS:<br>业务模型 CPSecSMS:<br>[38133] 逻辑表 &#39;&quot;CPSecSMS&quot;.&quot;Entity_Dept_Result&quot;&#39; 未与任何其他逻辑表联接。</p>
+</blockquote>
+<p> 猜测可能需要新建一张表，而不是建立一个视图。</p>
+</li>
+<li><p>第五次尝试：
+ 手动在业务模型区域为上次尝试中的视图添加外键关系，出错：</p>
+<blockquote>
+<p>ERRORS:<br>业务模型 CPSecSMS:<br>[nQSError: 15034] 维 BI_EDR 不与任何维表相关联。<br>[nQSError: 15001] 无法加载主题区域 CPSecSMS 的导航空间。</p>
+</blockquote>
+</li>
+<li><p>按照地2，3次尝试的方法，将BI_EDR中的entity层替换为CustEntity，保存成功。</p>
+</li>
+<li><p>完成所有操作！！</p>
+</li>
+<li><p>数据无法正常更新！！！————打开BI管理，对物理对象“更新行计数”，然后在管理中更新文件和元数据，然后刷新数据即可。</p>
+</li>
+</ol>
+<h3 id="2014-">2014年第一次尝试</h3>
+<p>同样适用上述场景</p>
+<ol>
+<li><p>在“业务模型和映射”区域新建“基于级别的逻辑维”，然后新建“Entity”和“Dept”两个对象，并将表“CustEntity_Dept”中的entity和dept字段放入其中，但是为ItemResult的Grade字段添加聚合副本SUM是失败：</p>
+<blockquote>
+<p>ERRORS:</p>
+<p>业务模型 CPSecSMS:<br>[38028] 逻辑列 ItemResult.SUM 的数据类型无效。</p>
+</blockquote>
+</li>
+<li><p>将ItemResult的SUM字段的聚合规则中取消“基于维”的，出现新的错误</p>
+<blockquote>
+<p>ERRORS:</p>
+<p>业务模型 CPSecSMS:<br>[nQSError: 23001] 聚合规则SUM.度量.AggRule_2050:6631394507760 的聚合表达式无效。<br>[nQSError: 23013] 提取属性 &#39;&quot;CPSecSMS&quot;.&quot;ItemResult&quot;.&quot;SUM&quot;&#39; 的元数据定义时出错。<br>[nQSError: 15001] 无法加载主题区域 CPSecSMS 的导航空间。  </p>
+</blockquote>
+</li>
+<li><p><del>忽视这个问题！可以正常运行！</del></p>
+</li>
+<li><p><del>删除所有数据，并在物理层导入完全的数据库，而不是数据库中单独的几张表，成功！！</del></p>
+</li>
+<li><p>将逻辑列ItemResult.SUM改名为ResultSUM，成功！！！应该是命名冲突问题</p>
+</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/machine learning/">machine learning</a>
+  <span></span> <a href="/tags/obiee/">obiee</a>
   </div>
 
 
@@ -140,7 +200,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://bloodingknight.github.io/2014/02/10/machine-learning-1/" data-title="机器学习笔记（一） | Unlimited" data-tsina="null" class="share clearfix">
+  <div data-url="http://bloodingknight.github.io/2014/03/14/obiee-guide/" data-title="OBIEE 使用小记 | Unlimited" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -150,18 +210,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2014/03/05/classification-regression/" title="分类（Classification）和回归（Regression）">
+ <a href="/2014/03/14/xiaomi-shuaji/" title="小米刷机教程">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  分类（Classification）和回归（Regression）</span>
+  小米刷机教程</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2013/10/29/pratical-common-lisp-note-chapter-3/"  title="Pratical Common Lisp 读书笔记 (第三章)">
+<a href="/2014/03/05/min-value-function/"  title="求一个函数的最小值">
  <strong>NEXT:</strong><br/> 
- <span>Pratical Common Lisp 读书笔记 (第三章)
+ <span>求一个函数的最小值
 </span>
 </a>
 </div>
@@ -179,7 +239,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">机器学习的用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">机器学习的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">机器学习的分类</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">1.1.</span> <span class="toc-text">复制数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-rcu"><span class="toc-number">1.2.</span> <span class="toc-text">安装rcu</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-obiee"><span class="toc-number">1.3.</span> <span class="toc-text">安装obiee</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">分析-公司不同时期分数对比</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2013-"><span class="toc-number">2.1.</span> <span class="toc-text">2013年第一次尝试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2014-"><span class="toc-number">2.2.</span> <span class="toc-text">2014年第一次尝试</span></a></li></ol>
   </div>
 
 <div id="asidepart">
