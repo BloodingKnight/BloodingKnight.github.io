@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://bloodingknight.github.io/"/>
-  <updated>2014-03-15T01:13:25.714Z</updated>
+  <updated>2014-03-15T01:18:00.934Z</updated>
   <id>http://bloodingknight.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://bloodingknight.github.io/2014/03/14/xiaomi-shuaji/"/>
     <id>http://bloodingknight.github.io/2014/03/14/xiaomi-shuaji/</id>
     <published>2014-03-14T15:07:18.000Z</published>
-    <updated>2014-03-15T01:12:59.000Z</updated>
+    <updated>2014-03-15T01:17:52.000Z</updated>
     <content type="html"><![CDATA[<h2 id="-">准备工作</h2>
 <p>对小米进行刷机可能需要准备的工具有：<br>MiFlash.exe，Android SDK Tools(adb, fastboot), 刷机包。</p>
 <p>另外需要知道的一些知识有：</p>
@@ -84,7 +84,7 @@ P.S. 如果想要线刷，请打开flash_all.bat文件，删除含有&quot;syste
 <p>进入Fastboot模式，输入<code>fastboot boot /path/to/your/recovery/img</code>，这个时候会进入Recovery模式，然后连接电脑，使用adb连接手机，进入shell查看自己的分区表是否正常，大部分的错误都在这上面。</p>
 <p>如果……你像我一样，在V5的系统上面，开机状态下直接残暴的分区，你会发现分区变了，但是系统没有变化……但是无法线刷，会报如下错误：</p>
 <blockquote>
-<p>remote error: size too large</p>
+<p>remote: size too large</p>
 </blockquote>
 <p>你可以：<br>下载一个V4的线刷包，找到system.img文件<br>进入Fastboot模式，<code>fastboot flash system /path/to/your/system/img</code>，如果不满意，可以顺便把recovery也flash一下。然后就进入了V4系统。</p>
 <h3 id="-">参考资料</h3>
@@ -92,7 +92,7 @@ P.S. 如果想要线刷，请打开flash_all.bat文件，删除含有&quot;syste
 ]]></content>
     
     
-      <category term="Android, 小米" scheme="http://bloodingknight.github.io/tags/Android,%20%E5%B0%8F%E7%B1%B3/"/>
+      <category term="Android,  小米" scheme="http://bloodingknight.github.io/tags/Android,%20%20%E5%B0%8F%E7%B1%B3/"/>
     
   </entry>
   
