@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://bloodingknight.github.io/"/>
-  <updated>2014-03-15T01:18:00.934Z</updated>
+  <updated>2014-03-15T01:22:42.307Z</updated>
   <id>http://bloodingknight.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://bloodingknight.github.io/2014/03/14/xiaomi-shuaji/"/>
     <id>http://bloodingknight.github.io/2014/03/14/xiaomi-shuaji/</id>
     <published>2014-03-14T15:07:18.000Z</published>
-    <updated>2014-03-15T01:17:52.000Z</updated>
+    <updated>2014-03-15T01:22:32.000Z</updated>
     <content type="html"><![CDATA[<h2 id="-">准备工作</h2>
 <p>对小米进行刷机可能需要准备的工具有：<br>MiFlash.exe，Android SDK Tools(adb, fastboot), 刷机包。</p>
 <p>另外需要知道的一些知识有：</p>
@@ -92,7 +92,9 @@ P.S. 如果想要线刷，请打开flash_all.bat文件，删除含有&quot;syste
 ]]></content>
     
     
-      <category term="Android,  小米" scheme="http://bloodingknight.github.io/tags/Android,%20%20%E5%B0%8F%E7%B1%B3/"/>
+      <category term="Android" scheme="http://bloodingknight.github.io/tags/Android/"/>
+    
+      <category term="小米" scheme="http://bloodingknight.github.io/tags/%E5%B0%8F%E7%B1%B3/"/>
     
   </entry>
   
