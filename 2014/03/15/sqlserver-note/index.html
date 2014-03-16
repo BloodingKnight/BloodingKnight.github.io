@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>机器学习笔记（一） | Unlimited</title>
+    <title>SQLSERVER数据库使用笔记 | Unlimited</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="胡勇刚">
     
-    <meta name="description" content="最近看了Coursera上面Machine Learning的课程，在此留下笔记。
-另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！
-又另：coursera-dl只能在linux下使用！">
+    <meta name="description" content="随机数生成
+UPDATE CItemResult SET Result = cast(ceiling(rand(checksum(newid()))*N) as int)
+http://blog.sqlauthority.com/2007/04/29/sql-server-random-number">
     
     
     
@@ -71,15 +71,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/02/10/machine-learning-1/" title="机器学习笔记（一）" itemprop="url">机器学习笔记（一）</a>
+      <a href="/2014/03/15/sqlserver-note/" title="SQLSERVER数据库使用笔记" itemprop="url">SQLSERVER数据库使用笔记</a>
   </h1>
   <p class="article-author">By
     
       <a href="https://plus.google.com/106949208244090944547?rel=author" title="胡勇刚" target="_blank" itemprop="author">胡勇刚</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-02-10T08:19:05.000Z" itemprop="datePublished">2月 10 2014</time>
-    更新日期:<time datetime="2014-03-05T03:34:11.000Z" itemprop="dateModified">3月 5 2014</time>
+    <time datetime="2014-03-15T01:27:26.000Z" itemprop="datePublished">3月 15 2014</time>
+    更新日期:<time datetime="2014-03-15T01:33:40.000Z" itemprop="dateModified">3月 15 2014</time>
     
   </p>
 </header>
@@ -88,51 +88,57 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">机器学习的用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">机器学习的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">机器学习的分类</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">随机数生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">插入数据</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">2.1.</span> <span class="toc-text">仅插入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">2.2.</span> <span class="toc-text">新建表</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">数据转移</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">3.1.</span> <span class="toc-text">复制数据库</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">4.</span> <span class="toc-text">附加数据库时，报错数据库只读的解决方案</span></a></li></ol>
 		</div>
 		
-		<p>最近看了Coursera上面Machine Learning的课程，在此留下笔记。</p>
-<p>另：github上有一个coursera-dl的程序可以用来下载coursera的视频非常好用！</p>
-<p>又另：coursera-dl只能在linux下使用！
-<a id="more"></a></p>
-<h2 id="-">机器学习的用途</h2>
-<p>机器学习在生活中有许多用途，常见的有垃圾邮件的拦截，数据挖掘，电脑AI等。</p>
-<h2 id="-">机器学习的定义</h2>
+		<h2 id="-">随机数生成</h2>
+<pre><code>UPDATE CItemResult SET Result = cast(ceiling(rand(checksum(newid()))*N) as int)
+</code></pre><p><a href="http://blog.sqlauthority.com/2007/04/29/sql-server-random-number-generator-script-sql-query/" target="_blank">http://blog.sqlauthority.com/2007/04/29/sql-server-random-number-generator-script-sql-query/</a><br><a href="http://hefan.iteye.com/blog/563840" target="_blank">http://hefan.iteye.com/blog/563840</a></p>
+<h2 id="-">插入数据</h2>
+<p><a href="http://technet.microsoft.com/zh-cn/library/ms188263%28v=sql.105%29.aspx" target="_blank">http://technet.microsoft.com/zh-cn/library/ms188263%28v=sql.105%29.aspx</a></p>
+<h3 id="-">仅插入数据</h3>
+<pre><code>DECLARE @I INT
+DECLARE @J INT
+SET @I = 2
+WHILE @I &lt; 28
+BEGIN
+    INSERT INTO CItemResult (ID, TaskID, Auditor_ID, CellID, Applicability, Result)
+        SELECT ID + (47 * (@I - 1)), @I, Auditor_ID, CellID, Applicability, floor(rand() * 10)
+        FROM CItemResult C
+        WHERE C.ID &lt; 48
+    SET @I = @I + 1
+END
+GO
+</code></pre><h3 id="-">新建表</h3>
+<pre><code>SELECT column1, column2 INTO new_table_name FROM old_table_name
+</code></pre><h2 id="-">数据转移</h2>
+<p>有GUI界面可以使用</p>
+<h3 id="-">复制数据库</h3>
+<p>分离和备份都不适合。</p>
+<ol>
+<li>由原数据库创建create脚本。</li>
+<li>创建一个新的数据库，将排序规则设置为Chinese_PRC_CS_AS，(后面会用到)</li>
+<li>由create脚本将源数据库中的表在新数据库中重建</li>
+<li>选择导入数据，将数据从原数据库中导入，如果数据库中的id是自增的标示符，则选中标示符插入。
+这样数据库就备份好了。
+如果</li>
+<li>直接选择导入数据，则会发现新数据库中的表没有主外键，自增等关系</li>
+<li>出现“id为只读属性”类似错误，或者“VS_ISBROKEN&quot;这种错误，则在相应的表复制时，选中标示符插入</li>
+</ol>
+<h2 id="-">附加数据库时，报错数据库只读的解决方案</h2>
+<p><a href="http://blog.sina.com.cn/s/blog_3f2ef11801000bmy.html" target="_blank">http://blog.sina.com.cn/s/blog_3f2ef11801000bmy.html</a></p>
 <ul>
-<li><p>Arthur Samuel (1959): </p>
-<blockquote>
-<p>Field of study that gives computers the ability to learn without being explicitly programmed.</p>
-</blockquote>
-<p>他曾经设计了一个Check Game的AI，虽然他本人并不精通这个游戏，但是当AI与AI自己下了许多盘棋之后，AI自己学会了这个游戏，并比作者本人还要玩得好。在这里面由于作者不精通游戏，因此无法显式地将编写出下棋程序，AI必须通过自己学习来学会下棋，这就是机器学习。</p>
-</li>
-<li><p>Tom Mitchell (1998) Well-posed Learning Problem: </p>
-<blockquote>
-<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.</p>
-</blockquote>
-<p>意即对于一个程序，它拥有学习经验E，并处理任务T，使用P来描述程序的表现，如果在处理T时，通过对E进行学习，可以提升他的表现P，那么这就是一个机器学习的程序。
-对于一个垃圾邮件拦截程序而言：</p>
-<ul>
-<li>拦截垃圾邮件 -- 任务T</li>
-<li>用户自己标记垃圾邮件 -- 经验E</li>
-<li>垃圾邮件拦截的正确率 -- 表现P</li>
+<li>首先，修改mdf等文件的属性，取消“只读”属性</li>
+<li>使用MSSQL配置管理工具，将服务的运行账户从“Network Service”修改为“Local System”</li>
 </ul>
-</li>
-</ul>
-<h2 id="-">机器学习的分类</h2>
-<p>一般而言，我们可以将机器学习分为两类有监督和无监督。</p>
-<ul>
-<li>有监督（Supervised): 有监督即有人工给出所需的经验，比如在垃圾邮件拦截中，用户自己标记垃圾邮件就属于有监督；在分词程序中，用户提供已经分好词的词库就属于有监督。</li>
-<li>无监督 (Unsupervised): 无监督即指没有人工给出所需的经验，一切都有程序自行来判断。</li>
-</ul>
-<p>在功能上，有监督属于<strong>分类</strong>，而无监督属于<strong>聚类</strong>。
-另外还有 Reinfocement learning, recommener system等等。</p>
+<p>我修改完之后就好了。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/machine learning/">machine learning</a>
+  <span></span> <a href="/tags/SQLSERVER/">SQLSERVER</a>
   </div>
 
 
@@ -140,7 +146,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://bloodingknight.github.io/2014/02/10/machine-learning-1/" data-title="机器学习笔记（一） | Unlimited" data-tsina="null" class="share clearfix">
+  <div data-url="http://bloodingknight.github.io/2014/03/15/sqlserver-note/" data-title="SQLSERVER数据库使用笔记 | Unlimited" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -149,19 +155,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/03/05/classification-regression/" title="分类（Classification）和回归（Regression）">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  分类（Classification）和回归（Regression）</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2013/10/29/pratical-common-lisp-note-chapter-3/"  title="Pratical Common Lisp 读书笔记 (第三章)">
+<a href="/2014/03/14/xiaomi-shuaji/"  title="小米刷机教程">
  <strong>NEXT:</strong><br/> 
- <span>Pratical Common Lisp 读书笔记 (第三章)
+ <span>小米刷机教程
 </span>
 </a>
 </div>
@@ -179,7 +177,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">机器学习的用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">机器学习的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">机器学习的分类</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">随机数生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">插入数据</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">2.1.</span> <span class="toc-text">仅插入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">2.2.</span> <span class="toc-text">新建表</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">数据转移</span></a></li><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">3.1.</span> <span class="toc-text">复制数据库</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#-"><span class="toc-number">4.</span> <span class="toc-text">附加数据库时，报错数据库只读的解决方案</span></a></li></ol>
   </div>
 
 <div id="asidepart">

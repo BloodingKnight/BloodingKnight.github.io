@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://bloodingknight.github.io/"/>
-  <updated>2014-03-15T01:22:42.307Z</updated>
+  <updated>2014-03-16T14:37:34.684Z</updated>
   <id>http://bloodingknight.github.io/</id>
   
   <author>
@@ -13,6 +13,60 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[SQLSERVER数据库使用笔记]]></title>
+    <link href="http://bloodingknight.github.io/2014/03/15/sqlserver-note/"/>
+    <id>http://bloodingknight.github.io/2014/03/15/sqlserver-note/</id>
+    <published>2014-03-15T01:27:26.000Z</published>
+    <updated>2014-03-15T01:33:40.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-">随机数生成</h2>
+<pre><code>UPDATE CItemResult SET Result = cast(ceiling(rand(checksum(newid()))*N) as int)
+</code></pre><p><a href="http://blog.sqlauthority.com/2007/04/29/sql-server-random-number-generator-script-sql-query/" target="_blank">http://blog.sqlauthority.com/2007/04/29/sql-server-random-number-generator-script-sql-query/</a><br><a href="http://hefan.iteye.com/blog/563840" target="_blank">http://hefan.iteye.com/blog/563840</a></p>
+<h2 id="-">插入数据</h2>
+<p><a href="http://technet.microsoft.com/zh-cn/library/ms188263%28v=sql.105%29.aspx" target="_blank">http://technet.microsoft.com/zh-cn/library/ms188263%28v=sql.105%29.aspx</a></p>
+<h3 id="-">仅插入数据</h3>
+<pre><code>DECLARE @I INT
+DECLARE @J INT
+SET @I = 2
+WHILE @I &lt; 28
+BEGIN
+    INSERT INTO CItemResult (ID, TaskID, Auditor_ID, CellID, Applicability, Result)
+        SELECT ID + (47 * (@I - 1)), @I, Auditor_ID, CellID, Applicability, floor(rand() * 10)
+        FROM CItemResult C
+        WHERE C.ID &lt; 48
+    SET @I = @I + 1
+END
+GO
+</code></pre><h3 id="-">新建表</h3>
+<pre><code>SELECT column1, column2 INTO new_table_name FROM old_table_name
+</code></pre><h2 id="-">数据转移</h2>
+<p>有GUI界面可以使用</p>
+<h3 id="-">复制数据库</h3>
+<p>分离和备份都不适合。</p>
+<ol>
+<li>由原数据库创建create脚本。</li>
+<li>创建一个新的数据库，将排序规则设置为Chinese_PRC_CS_AS，(后面会用到)</li>
+<li>由create脚本将源数据库中的表在新数据库中重建</li>
+<li>选择导入数据，将数据从原数据库中导入，如果数据库中的id是自增的标示符，则选中标示符插入。
+这样数据库就备份好了。
+如果</li>
+<li>直接选择导入数据，则会发现新数据库中的表没有主外键，自增等关系</li>
+<li>出现“id为只读属性”类似错误，或者“VS_ISBROKEN&quot;这种错误，则在相应的表复制时，选中标示符插入</li>
+</ol>
+<h2 id="-">附加数据库时，报错数据库只读的解决方案</h2>
+<p><a href="http://blog.sina.com.cn/s/blog_3f2ef11801000bmy.html" target="_blank">http://blog.sina.com.cn/s/blog_3f2ef11801000bmy.html</a></p>
+<ul>
+<li>首先，修改mdf等文件的属性，取消“只读”属性</li>
+<li>使用MSSQL配置管理工具，将服务的运行账户从“Network Service”修改为“Local System”</li>
+</ul>
+<p>我修改完之后就好了。</p>
+]]></content>
+    
+    
+      <category term="SQLSERVER" scheme="http://bloodingknight.github.io/tags/SQLSERVER/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[小米刷机教程]]></title>
@@ -103,10 +157,9 @@ P.S. 如果想要线刷，请打开flash_all.bat文件，删除含有&quot;syste
     <link href="http://bloodingknight.github.io/2014/03/14/obiee-guide/"/>
     <id>http://bloodingknight.github.io/2014/03/14/obiee-guide/</id>
     <published>2014-03-14T07:42:09.000Z</published>
-    <updated>2014-03-14T09:01:27.000Z</updated>
+    <updated>2014-03-15T01:35:01.000Z</updated>
     <content type="html"><![CDATA[<h2 id="-">安装</h2>
-<p>首先去官方网站下载rcu，和obiee
-rcu：
+<p>首先去官方网站下载rcu，和obiee<br>rcu：
 obiee：</p>
 <h3 id="-">复制数据库</h3>
 <p>分离和备份都不适合。</p>
